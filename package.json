@@ -1,0 +1,26 @@
+{
+  "name": "projetexpress",
+  "version": "1.0.0",
+  "description": "API express JS par groupe de 2 - Barachet Maxime / Brice Noah",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/home.js"
+  },
+  "keywords": [
+    "API"
+  ],
+  "author": "Barachet Maxime - Brice Noah",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mariadb": "^3.2.3",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.37.1"
+  }
+}
