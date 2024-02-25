@@ -8,8 +8,10 @@ const port = 3000;
 
 // Imports
 const fileRoutes = require("./routes/add-file");
+const helloroute = require("./routes/helloroute");
 
 // Routes
+app.use("/", helloroute);
 app.use("/", fileRoutes);
 
 // Synchronisation du modèle avec la base de données
