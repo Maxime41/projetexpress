@@ -1,12 +1,13 @@
 // controllers/registerController.js
 const { Op } = require("sequelize");
 const User = require('../models/User');
+const bcrypt = require('bcrypt');
 
 
 exports.registerUser = async (req, res) => {
     try {
         
-        const { firstName, lastName, email, nickname } = req.body;
+        const { firstName, lastName, email, nickname, password } = req.body;
         console.log('Request Body:', req.body); // Log the request body
 
         // Check if the user with the same email or nickname already exists
@@ -18,13 +19,16 @@ exports.registerUser = async (req, res) => {
         if (existingUser) {
             return res.status(400).json({ error: "Email or nickname already in use" });
         }
+        // Hash pass
+        const hashedPassword = await bcrypt.hash(password, 10);
 
         // Create the user
         const newUser = await User.create({
             firstName,
             lastName,
             email,
-            nickname
+            nickname,
+            password: hashedPassword
         });
 
         res.status(201).send("OK");
