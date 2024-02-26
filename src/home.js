@@ -17,16 +17,19 @@ app.use(passport.initialize()); // init passport
 // Imports
 const fileRoutes = require("./routes/add-file");
 const helloroute = require("./routes/helloroute");
-const registerRoute = require("./routes/register"); // Add the registration route
+const registerRoute = require("./routes/register"); 
 const loginRoute = require("./routes/login");
 const profileRoute = require("./routes/profile");
+const usersRoute = require("./routes/users"); 
 
 // Routes
 app.use("/", helloroute);
 app.use("/", fileRoutes);
-app.use("/", registerRoute); // Use the registration route
+app.use("/", registerRoute); 
 app.use("/", loginRoute);
 app.use("/", profileRoute);
+app.use("/users", usersRoute); 
+
 
 //Passport config
 require('./passport');
