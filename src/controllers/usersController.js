@@ -18,6 +18,24 @@ exports.deleteUser = async (req, res) => {
     }
 };
 
+exports.banUser = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        // Check if the user exists
+        const user = await User.findByPk(userId);
+        if (!user) {
+            return res.status(404).json({ error: "User not found" });
+        }
+        // Toggle the banned status
+        user.isBanned = !user.isBanned;
+        await user.save();
+        return res.json({ message: "User banned/unbanned successfully" });
+    } catch (error) {
+        console.error("Error banning/unbanning user:", error);
+        return res.status(500).json({ error: "Internal server error" });
+    }
+};
+
 exports.getAllUsers = async (req, res) => {
     try {
 

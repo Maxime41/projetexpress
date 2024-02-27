@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 const passport = require('passport');
 const usersController = require("../controllers/usersController");
+const checkBan = require("../middleware/checkBan");
 
 // Middleware to check if user is admin
 const isAdmin = (req, res, next) => {
@@ -14,16 +15,19 @@ const isAdmin = (req, res, next) => {
 };
 
 // Delete user route
-router.delete("/rm/:userId", passport.authenticate('jwt-verify', { session: false }), isAdmin, usersController.deleteUser);
+router.delete("/rm/:userId", passport.authenticate('jwt-verify', { session: false }), isAdmin, checkBan, usersController.deleteUser);
+
+// Ban/unban user route
+router.put("/ban/:userId", passport.authenticate('jwt-verify', { session: false }), isAdmin, checkBan, usersController.banUser);
 
 //List users 
-router.get("/list", passport.authenticate('jwt-verify', { session: false }), isAdmin, usersController.getAllUsers);
+router.get("/list", passport.authenticate('jwt-verify', { session: false }), isAdmin, checkBan, usersController.getAllUsers);
 
 // Make user admin route
-router.put("/up/:userId", passport.authenticate('jwt-verify', { session: false }), isAdmin, usersController.makeUserAdmin);
+router.put("/up/:userId", passport.authenticate('jwt-verify', { session: false }), isAdmin, checkBan, usersController.makeUserAdmin);
 
 // Remove admin role from user route
-router.put("/down/:userId", passport.authenticate('jwt-verify', { session: false }), isAdmin, usersController.removeAdminRole);
+router.put("/down/:userId", passport.authenticate('jwt-verify', { session: false }), isAdmin, checkBan, usersController.removeAdminRole);
 
 module.exports = router;
 
