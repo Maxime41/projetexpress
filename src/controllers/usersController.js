@@ -17,3 +17,17 @@ exports.deleteUser = async (req, res) => {
         return res.status(500).json({ error: "Internal server error" });
     }
 };
+
+exports.getAllUsers = async (req, res) => {
+    try {
+
+        // Retrieve all users from the database
+        const users = await User.findAll();
+
+        // Return the list of users
+        return res.json(users);
+    } catch (error) {
+        console.error('Error retrieving users:', error);
+        return res.status(500).json({ error: "Internal server error" });
+    }
+};

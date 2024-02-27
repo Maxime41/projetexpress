@@ -9,12 +9,15 @@ const isAdmin = (req, res, next) => {
     if (req.user.isAdmin) {
         next(); // User is admin, proceed to the next middleware
     } else {
-        return res.status(403).json({ error: "Forbidden: You are not authorized to access this resource" });
+        return res.status(403).json({ error: "Forbidden: Only admins !" });
     }
 };
 
 // Delete user route
 router.delete("/rm/:userId", passport.authenticate('jwt-verify', { session: false }), isAdmin, usersController.deleteUser);
+
+//List users 
+router.get("/list", passport.authenticate('jwt-verify', { session: false }), isAdmin, usersController.getAllUsers);
 
 module.exports = router;
 
