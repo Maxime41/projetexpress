@@ -19,5 +19,11 @@ router.delete("/rm/:userId", passport.authenticate('jwt-verify', { session: fals
 //List users 
 router.get("/list", passport.authenticate('jwt-verify', { session: false }), isAdmin, usersController.getAllUsers);
 
+// Make user admin route
+router.put("/up/:userId", passport.authenticate('jwt-verify', { session: false }), isAdmin, usersController.makeUserAdmin);
+
+// Remove admin role from user route
+router.put("/down/:userId", passport.authenticate('jwt-verify', { session: false }), isAdmin, usersController.removeAdminRole);
+
 module.exports = router;
 
