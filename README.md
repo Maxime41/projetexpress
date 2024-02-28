@@ -10,7 +10,7 @@ An API made with ExpressJS, the Sequelize ORM for database management and Passpo
 - :small_blue_diamond: Npm packages: Run `npm install` to install dependencies.
 - :small_blue_diamond: Create a `.env` file with a `JWT_SECRET` key. You can generate the key with the following command: `require('crypto').randomBytes(64).toString('hex')`.
 - :small_blue_diamond: Database service (e.g., MySQL) like the one provided by XAMPP.
-- :small_blue_diamond: Create a database named `projetexpress` or alternatively : [exported database here]().
+- :small_blue_diamond: Create a database named `projetexpress` or alternatively : [exported database here (SQL)](https://github.com/Maxime41/projetexpress/blob/main/projetexpress.sql).
 - :small_blue_diamond: Default driver installed is mariaDB, [Sequelize doc if you need another one](https://sequelize.org/docs/v6/getting-started/).
 - :small_blue_diamond: Start the project `npm start`.
 
@@ -32,7 +32,7 @@ projetexpress
 
 ## Routes
 
-For detailed examples and testing of the API routes, refer to the Postman collection available :arrow_forward: :ballot_box_with_check: [here](link-to-your-postman-collection). :arrow_backward:
+For detailed examples and testing of the API routes, refer to the Postman collection available :arrow_forward: :ballot_box_with_check: [here](https://documenter.getpostman.com/view/33186430/2sA2rFTLdN). :arrow_backward:
 
 **Note:** All routes requiring a token will fail if the user is banned (including users routes).  
 In Postman, for routes that require a token, add an `Authorization` key with the value `Bearer <token>` in the Headers tab.

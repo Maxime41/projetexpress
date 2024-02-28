@@ -1,4 +1,4 @@
-[![fr](https://img.shields.io/badge/Language-EN-blue.svg)](https://github.com/Maxime41/projetexpress/blob/main/README.fr.md)
+[![fr](https://img.shields.io/badge/Language-EN-blue.svg)](https://github.com/Maxime41/projetexpress/blob/main/README.md)
 
 # API ExpressJS avec Sequelize et Passport
 
@@ -10,7 +10,7 @@ Une API réalisée avec ExpressJS, l'ORM Sequelize pour la gestion de base de do
 - :small_blue_diamond: Paquets npm : Exécutez `npm install` pour installer les dépendances.
 - :small_blue_diamond: Créez un fichier `.env` avec une clé `JWT_SECRET`. Vous pouvez générer la clé avec la commande suivante : `require('crypto').randomBytes(64).toString('hex')`.
 - :small_blue_diamond: Service de base de données (par exemple, MySQL) comme celui fourni par XAMPP.
-- :small_blue_diamond: Créez une base de données nommée `projetexpress` ou alors : [base de données exportée ici]().
+- :small_blue_diamond: Créez une base de données nommée `projetexpress` ou alors : [base de données exportée ici (SQL)](https://github.com/Maxime41/projetexpress/blob/main/projetexpress.sql).
 - :small_blue_diamond: Le système par défaut installé est mariaDB, [documentation Sequelize si vous en avez besoin d'un autre](https://sequelize.org/docs/v6/getting-started/).
 - :small_blue_diamond: Lancer le projet `npm start`.
 
@@ -32,7 +32,7 @@ projetexpress
 
 ## Routes
 
-Pour des exemples détaillés et des tests des routes de l'API, consultez la collection Postman disponible :arrow_forward: :ballot_box_with_check: [ici](link-to-your-postman-collection). :arrow_backward:
+Pour des exemples détaillés et des tests des routes de l'API, consultez la collection Postman disponible :arrow_forward: :ballot_box_with_check: [ici](https://documenter.getpostman.com/view/33186430/2sA2rFTLdN). :arrow_backward:
 
 **Note:** Toutes les routes nécessitant un jeton échoueront si l'utilisateur est banni (y compris les routes utilisateur).  
 Dans Postman, pour les routes nécessitant un jeton, ajoutez une clé `Authorization` avec la valeur `Bearer <jeton>` dans l'onglet Headers.
