@@ -8,9 +8,9 @@ An API made with ExpressJS, the Sequelize ORM for database management and Passpo
 
 - :small_blue_diamond: Node.js installed
 - :small_blue_diamond: Npm packages: Run `npm install` to install dependencies.
-- :small_blue_diamond: Create a `.env` file with a `JWT_SECRET` key. You can generate the key with the following command: `require('crypto').randomBytes(64).toString('hex')`.
+- :small_blue_diamond: Create a `.env` file with a `JWT_SECRET` key. You can generate the key with the following command (after running `node`) : `require('crypto').randomBytes(64).toString('hex')`.
 - :small_blue_diamond: Database service (e.g., MySQL) like the one provided by XAMPP.
-- :small_blue_diamond: Create a database named `projetexpress` or alternatively : [exported database here (SQL)](https://github.com/Maxime41/projetexpress/blob/main/projetexpress.sql).
+- :small_blue_diamond: Create a database named `projetexpress` and import [the exported database here (SQL)](https://github.com/Maxime41/projetexpress/blob/main/projetexpress.sql).
 - :small_blue_diamond: Default driver installed is mariaDB, [Sequelize doc if you need another one](https://sequelize.org/docs/v6/getting-started/).
 - :small_blue_diamond: Start the project `npm start`.
 

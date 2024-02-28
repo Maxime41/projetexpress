@@ -8,9 +8,9 @@ Une API réalisée avec ExpressJS, l'ORM Sequelize pour la gestion de base de do
 
 - :small_blue_diamond: Node.js installé
 - :small_blue_diamond: Paquets npm : Exécutez `npm install` pour installer les dépendances.
-- :small_blue_diamond: Créez un fichier `.env` avec une clé `JWT_SECRET`. Vous pouvez générer la clé avec la commande suivante : `require('crypto').randomBytes(64).toString('hex')`.
+- :small_blue_diamond: Créez un fichier `.env` avec une clé `JWT_SECRET`. Vous pouvez générer la clé avec la commande suivante (après avoir éxécuté `node`) : `require('crypto').randomBytes(64).toString('hex')`.
 - :small_blue_diamond: Service de base de données (par exemple, MySQL) comme celui fourni par XAMPP.
-- :small_blue_diamond: Créez une base de données nommée `projetexpress` ou alors : [base de données exportée ici (SQL)](https://github.com/Maxime41/projetexpress/blob/main/projetexpress.sql).
+- :small_blue_diamond: Créez une base de données nommée `projetexpress` et ensuite importer [la base de données exportée ici (SQL)](https://github.com/Maxime41/projetexpress/blob/main/projetexpress.sql).
 - :small_blue_diamond: Le système par défaut installé est mariaDB, [documentation Sequelize si vous en avez besoin d'un autre](https://sequelize.org/docs/v6/getting-started/).
 - :small_blue_diamond: Lancer le projet `npm start`.
 
